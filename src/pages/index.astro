@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="欢迎来到我的博客">
+	<h1>欢迎来到我的个人博客</h1>
+	<p>这里是我分享想法、经验和见解的地方。请随意浏览我的文章，希望你能找到有趣或有用的内容！</p>
+	<a href="/blog" class="cta-button">查看所有文章</a>
+</Layout>
+
+<style>
+	h1 {
+		margin-bottom: 1rem;
+	}
+	.cta-button {
+		display: inline-block;
+		background-color: rgb(var(--accent));
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: bold;
+		margin-top: 1rem;
+	}
+	.cta-button:hover {
+		background-color: rgb(var(--accent-dark));
+	}
+</style>

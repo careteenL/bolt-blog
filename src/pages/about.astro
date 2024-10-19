@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="关于我">
+	<h1>关于我</h1>
+	<p>你好！我是[你的名字]，这是我的个人博客。我是一名[你的职业/身份]，对[你的兴趣/专业]充满热情。</p>
+	<p>通过这个博客，我希望能够分享我的经验、想法和见解。欢迎与我交流，一起探讨有趣的话题！</p>
+	<h2>联系方式</h2>
+	<ul>
+		<li>邮箱：your.email@example.com</li>
+		<li>GitHub：<a href="https://github.com/yourusername">@yourusername</a></li>
+		<li>Twitter：<a href="https://twitter.com/yourusername">@yourusername</a></li>
+	</ul>
+</Layout>
+
+<style>
+	h1, h2 {
+		color: rgb(var(--accent));
+	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+	li {
+		margin-bottom: 0.5rem;
+	}
+	a {
+		color: rgb(var(--accent));
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+</style>

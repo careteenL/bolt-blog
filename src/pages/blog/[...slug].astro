@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const blogEntries = await getCollection('blog');
+	return blogEntries.map(entry => ({
+		params: { slug: entry.slug }, props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+	<article>
+		<h1>{entry.data.title}</h1>
+		<p>作者：{entry.data.author} | 发布日期：{entry.data.pubDate}</p>
+		{entry.data.image && <img src={entry.data.image} alt={entry.data.title} />}
+		<Content />
+		<div class="tags">
+			标签：
+			{entry.data.tags.map((tag) => (
+				<span class="tag">{tag}</span>
+			))}
+		</div>
+	</article>
+</Layout>
+
+<style>
+	article {
+		max-width: 65ch;
+		margin: 0 auto;
+	}
+	h1 {
+		color: rgb(var(--accent));
+	}
+	.tags {
+		margin-top: 1rem;
+	}
+	.tag {
+		background-color: rgb(var(--accent-light));
+		color: rgb(var(--accent-dark));
+		padding: 0.2rem 0.5rem;
+		border-radius: 4px;
+		font-size: 0.8rem;
+		margin-right: 0.5rem;
+	}
+</style>

@@ -1,0 +1,21 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "save": "node scripts/save-version.js",
+    "list": "node scripts/list-versions.js",
+    "restore": "node scripts/restore-version.js",
+    "git": "git add . && git commit -m \"Initial commit\" && git branch -M main && git remote add origin https://github.com/careteenL/bolt-home.git && git push"
+  },
+  "dependencies": {
+    "astro": "^4.15.3",
+    "git": "^0.1.5"
+  }
+}
